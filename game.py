@@ -19,7 +19,7 @@ class Game:
             else:
                 p = self.playero
 
-            move = input("Give your move (r,c) player " + p.marker)
+            move = input("Give your move (row,column) player " + p.marker + ": ")
             move = move.split(',')
             for i, value in enumerate(move):
                 temp_value = value.strip()
