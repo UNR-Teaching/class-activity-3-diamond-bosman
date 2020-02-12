@@ -54,7 +54,7 @@ class TestHasWinner(unittest.TestCase):
         board.mark_square(2, 2, 1)
         self.assertEqual(board.has_winner(), ".")
 
-    def test3(self):
+    def test4(self):
         '''
         Test no winner with no squares marked.
         '''
