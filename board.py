@@ -10,37 +10,32 @@ class Board(object):
             return
         
         self.board[row][col] = value
-        result = self.has_winner()
-
-        return result
-        
 
     def has_winner(self):
-        # check rows
+        # check rows for winner
         rows = 0
         for i in range(self.size):
             rows = sum([self.board[i][0], self.board[i][1], self.board[i][2]])
             if abs(rows) == 3:
                 break
 
-        # check cols
+        # check cols for winner
         cols = 0
         for i in range(self.size):
             cols = sum([self.board[0][i], self.board[1][i], self.board[2][i]])
             if abs(cols) == 3:
                 break
 
-        # check diag
+        # check diag or winner
         diag = sum([self.board[0][0], self.board[1][1], self.board[2][2]])
 
-        # check other diag
+        # check other diag for winner
         other_diag = sum([self.board[2][0], self.board[1][1], self.board[0][2]])
     
         if 3 in (rows, cols, diag, other_diag):
             return 'x'
         if -3 in (rows, cols, diag, other_diag):
             return 'o'
-        
         return '.'
 
     def board_full(self):

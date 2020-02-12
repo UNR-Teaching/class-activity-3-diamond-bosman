@@ -36,8 +36,8 @@ class Game:
 
             move[0] = int(move[0])
             move[1] = int(move[1])
-            winner = self.board.mark_square(move[0], move[1], p.val)
-
+            self.board.mark_square(move[0], move[1], p.val)
+            winner = self.board.has_winner()
             if winner != '.':
                 return 'Winner is ' + winner
 
