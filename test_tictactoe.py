@@ -52,7 +52,13 @@ class TestHasWinner(unittest.TestCase):
         board.mark_square(0, 2, 1)
         board.mark_square(1, 2, -1)
         board.mark_square(2, 2, 1)
-        board.has_winner
+        self.assertEqual(board.has_winner(), ".")
+
+    def test3(self):
+        '''
+        Test no winner with no squares marked.
+        '''
+        board = Board()
         self.assertEqual(board.has_winner(), ".")
 
 if __name__ == '__main__':
