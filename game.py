@@ -49,12 +49,25 @@ class Game:
     def check_winner(self):
         winner = self.board.has_winner()
         return winner
+    
+    def print_board(self):
+        board = [[0 for _ in range(3)] for _ in range(3)]
+        for i in range(3):
+            for j in range(3):
+                if self.board.board[i][j] == 1:
+                    board[i][j] = 'x'
+                elif self.board.board[i][j] == -1:
+                    board[i][j] = 'o'
+                else:
+                    board[i][j] = '-'
+        for row in board:
+            print(row)
 
     def play_game(self):
         while not self.finished:
             if self.check_full():
                 break
-
+            self.print_board()
             p = self.switch_players()
 
             moves = self.get_moves(p)
@@ -66,7 +79,9 @@ class Game:
 
             if winner != '.':
                 return 'Winner is ' + winner
+
         return 'Tie'
+
 
 if __name__ == '__main__':
     game = Game()
