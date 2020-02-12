@@ -1,5 +1,7 @@
 import unittest
-from tictactoe import Board
+from board import Board
+from game import Game
+from player import Player
 
 class TestMethods(unittest.TestCase):
 
